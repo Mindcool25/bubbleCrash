@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://v58cm1el50qr"]
 
-[ext_resource type="Texture2D" uid="uid://cfwx1yeud5trn" path="res://Assets/Images/tempBackgroundNEW.jpg" id="1_n6r28"]
+[ext_resource type="Texture2D" uid="uid://bt8k8k3xa066a" path="res://Assets/Images/Mindows YQ.png" id="1_3cc4g"]
 [ext_resource type="Texture2D" uid="uid://odgmltxytgk0" path="res://Assets/Images/Bar.jpg" id="2_ex315"]
 
 [node name="Desktop" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
-texture = ExtResource("1_n6r28")
+texture = ExtResource("1_3cc4g")
 
 [node name="Bar" type="Sprite2D" parent="."]
 position = Vector2(400, 590)
