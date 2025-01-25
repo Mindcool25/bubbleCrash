@@ -1,6 +1,37 @@
 [gd_scene load_steps=8 format=3 uid="uid://cde60uvmuagg"]
 
-[ext_resource type="Script" path="res://Scripts/Desktop/window.gd" id="1_5p0uk"]
+[sub_resource type="GDScript" id="GDScript_h3c15"]
+script/source = "extends Node2D
+
+@export var tabBox: CollisionShape2D
+var dragging: bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+
+	pass
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and dragging:
+		self.position += event.get_relative()
+		pass
+	pass
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_action_just_pressed(\"click\"):
+		dragging = true
+		var overlapping = $Area2D.get_overlapping_areas()
+		self.get_parent().move_child(self, -1)
+		
+	if Input.is_action_just_released(\"click\"):
+		dragging = false
+	
+	pass # Replace with function body.
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gew0j"]
 size = Vector2(298, 13)
@@ -20,12 +51,13 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lkw3y"]
 gradient = SubResource("Gradient_x808r")
 
-[node name="Window" type="StaticBody2D" node_paths=PackedStringArray("tabBox")]
-input_pickable = true
-script = ExtResource("1_5p0uk")
-tabBox = NodePath("tabBox")
+[node name="Window" type="Node2D" node_paths=PackedStringArray("tabBox")]
+script = SubResource("GDScript_h3c15")
+tabBox = NodePath("")
 
-[node name="tabBox" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="tabBox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(149, 6.5)
 shape = SubResource("RectangleShape2D_gew0j")
 
@@ -47,4 +79,4 @@ rotation = -1.5708
 scale = Vector2(0.0374654, 0.824844)
 texture = SubResource("GradientTexture2D_lkw3y")
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

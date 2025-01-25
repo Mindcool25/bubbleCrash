@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://clbo0gclh2avm"]
+
+[ext_resource type="Script" path="res://Scripts/Desktop/AppButton.gd" id="1_r7q3q"]
+[ext_resource type="Texture2D" uid="uid://c32j0342ybfuc" path="res://Assets/Images/BarButton.jpg" id="2_t2to1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0i66"]
+size = Vector2(60, 60)
+
+[node name="AppButton" type="Node2D"]
+script = ExtResource("1_r7q3q")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(30, 30)
+scale = Vector2(0.857143, 3)
+texture = ExtResource("2_t2to1")
+
+[node name="ButtonArea" type="Area2D" parent="."]
+
+[node name="ButtonBox" type="CollisionShape2D" parent="ButtonArea"]
+position = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_d0i66")
+
+[connection signal="input_event" from="ButtonArea" to="." method="_on_button_area_input_event"]
