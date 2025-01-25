@@ -91,7 +91,7 @@ ok_button_text = "Open"
 file_mode = 0
 access = 2
 root_subfolder = "~"
-filters = PackedStringArray("*.png", "*.jpeg", "*.jpg", "*.gif")
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg", "*.svg")
 
 [connection signal="input_event" from="Bar/BarButton/ButtonBox" to="." method="_on_button_box_input_event"]
 [connection signal="pressed" from="Bar/BarButton/BarMenu/Settings" to="." method="_on_settings_pressed"]
