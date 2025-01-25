@@ -4,12 +4,12 @@
 [ext_resource type="Script" path="res://Scripts/Desktop/Desktop.gd" id="1_knfap"]
 [ext_resource type="Texture2D" uid="uid://cgjxxscgmqnsp" path="res://Assets/Images/Mindows_Logo.png" id="2_nlpqe"]
 [ext_resource type="Texture2D" uid="uid://5h11ulpysl71" path="res://Assets/Images/Panel.png" id="3_btehf"]
-[ext_resource type="PackedScene" uid="uid://cde60uvmuagg" path="res://Scenes/window.tscn" id="4_7yjp2"]
 [ext_resource type="Texture2D" uid="uid://c5w4k2jva1urn" path="res://Assets/Images/Begin button.png" id="4_35kv7"]
 [ext_resource type="Texture2D" uid="uid://egwvqq14e0xd" path="res://Assets/Images/BarMenu.jpg" id="4_kdqul"]
 [ext_resource type="Texture2D" uid="uid://ddb1ihr7gdlr7" path="res://Assets/Images/Begin.png" id="5_qvxxb"]
 [ext_resource type="Texture2D" uid="uid://cjvsqyk26a7rc" path="res://Assets/Images/Begin button dark.png" id="5_ulxha"]
 [ext_resource type="PackedScene" uid="uid://clbo0gclh2avm" path="res://Scenes/app_button.tscn" id="10_g6kyc"]
+[ext_resource type="PackedScene" uid="uid://dt0qxbcip2nxt" path="res://Scenes/clicker.tscn" id="10_yl8h3"]
 [ext_resource type="Texture2D" uid="uid://dgquhpdktnsth" path="res://icon.svg" id="11_2hwk1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3jig"]
@@ -72,7 +72,7 @@ texture = ExtResource("4_kdqul")
 
 [node name="AppButton" parent="Bar/BarButton/BarMenu" node_paths=PackedStringArray("WindowHolder") instance=ExtResource("10_g6kyc")]
 position = Vector2(-89, -139)
-Application = ExtResource("4_7yjp2")
+Application = ExtResource("10_yl8h3")
 WindowHolder = NodePath("../../../../Windows")
 
 [node name="Settings" type="Button" parent="Bar/BarButton/BarMenu"]
@@ -82,6 +82,14 @@ offset_right = 94.0
 offset_bottom = 144.0
 icon = ExtResource("11_2hwk1")
 expand_icon = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 649.0
+offset_top = 572.0
+offset_right = 797.0
+offset_bottom = 600.0
+text = "0"
+horizontal_alignment = 2
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
