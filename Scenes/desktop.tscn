@@ -1,75 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://v58cm1el50qr"]
+[gd_scene load_steps=3 format=3 uid="uid://v58cm1el50qr"]
 
-[ext_resource type="Texture2D" uid="uid://c3p87h4wxd8oo" path="res://Assets/Images/tempBackground.jpg" id="1_3dhie"]
-[ext_resource type="Script" path="res://Scripts/Desktop/TaskBar.gd" id="2_hldye"]
-[ext_resource type="Texture2D" uid="uid://cgjxxscgmqnsp" path="res://Assets/Images/Mindows_Logo.png" id="2_nlpqe"]
-[ext_resource type="PackedScene" uid="uid://cde60uvmuagg" path="res://Scenes/window.tscn" id="4_7yjp2"]
-[ext_resource type="Script" path="res://Scripts/Desktop/icon.gd" id="4_845v0"]
-
-[sub_resource type="Gradient" id="Gradient_r031j"]
-offsets = PackedFloat32Array(0, 0.487013, 1)
-colors = PackedColorArray(0, 0, 0.890196, 1, 0.346186, 0.547705, 1, 1, 8.66354e-07, 0, 0.695354, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_opqbb"]
-gradient = SubResource("Gradient_r031j")
-
-[sub_resource type="Gradient" id="Gradient_s5q8m"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vshqk"]
-gradient = SubResource("Gradient_s5q8m")
-
-[sub_resource type="Gradient" id="Gradient_7wxkn"]
-colors = PackedColorArray(8.66354e-07, 0, 0.695354, 1, 8.66354e-07, 0, 0.695354, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wualb"]
-gradient = SubResource("Gradient_7wxkn")
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kpblh"]
-width = 20
-height = 20
+[ext_resource type="Texture2D" uid="uid://cfwx1yeud5trn" path="res://Assets/Images/tempBackgroundNEW.jpg" id="1_n6r28"]
+[ext_resource type="Texture2D" uid="uid://odgmltxytgk0" path="res://Assets/Images/Bar.jpg" id="2_ex315"]
 
 [node name="Desktop" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_3dhie")
+position = Vector2(400, 300)
+texture = ExtResource("1_n6r28")
 
-[node name="TaskBar" type="Node2D" parent="." node_paths=PackedStringArray("TaskBarButton", "Menu", "OpenApplication")]
-position = Vector2(959.702, 1569.98)
-rotation = 1.5708
-scale = Vector2(1.53047, 60.0017)
-script = ExtResource("2_hldye")
-TaskBarButton = NodePath("TaskBarButton/Logo")
-Menu = NodePath("Menu")
-OpenApplication = NodePath("Menu/OpenWindow")
-
-[node name="TaskBarBackground" type="Sprite2D" parent="TaskBar"]
-position = Vector2(-331.124, -0.00839996)
-scale = Vector2(0.34246, 0.499948)
-texture = SubResource("GradientTexture2D_opqbb")
-
-[node name="TaskBarButton" type="Sprite2D" parent="TaskBar"]
-position = Vector2(-331.12, 15.7062)
-rotation = -1.5708
-scale = Vector2(0.00908374, 0.341032)
-texture = SubResource("GradientTexture2D_vshqk")
-
-[node name="Logo" type="Sprite2D" parent="TaskBar/TaskBarButton"]
-position = Vector2(-0.0303707, 0.223993)
-scale = Vector2(0.640292, 0.642479)
-texture = ExtResource("2_nlpqe")
-
-[node name="Menu" type="Sprite2D" parent="TaskBar"]
-position = Vector2(-515.457, 12.8899)
-rotation = -1.5708
-scale = Vector2(0.0961632, 5.38126)
-texture = SubResource("GradientTexture2D_wualb")
-
-[node name="OpenWindow" type="Sprite2D" parent="TaskBar/Menu" node_paths=PackedStringArray("application")]
-texture = SubResource("NoiseTexture2D_kpblh")
-script = ExtResource("4_845v0")
-application = NodePath("../../../Window")
-
-[node name="Window" parent="." instance=ExtResource("4_7yjp2")]
-position = Vector2(826, 293)
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(400, 590)
+texture = ExtResource("2_ex315")
