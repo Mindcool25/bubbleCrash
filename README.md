@@ -11,77 +11,45 @@ Revision: 0.0.1
   - Monetization model (Brief/Document)
   - Project Scope
   - Influences (Brief)
-    - <Influence #1>
-    - <Influence #2>
-    - <Influence #3>
-    - <Influence #4>
+    - **Cookie Clicker**
+    - **Universal paperclips**
   - The elevator Pitch
+    Yknow the housing market bubble that popped in 2008? Social commentary :).
   - Project Description (Brief):
   - Project Description (Detailed)
 - What sets this project apart?
   - Core Gameplay Mechanics (Detailed)
-    - <Core Gameplay Mechanic #1>
-    - <Core Gameplay Mechanic #2>
-    - <Core Gameplay Mechanic #3>
-    - <Core Gameplay Mechanic #4>
+    - **Incremental game go brrrr**
 - Story and Gameplay
-  - Story (Brief)
+  - Story (Brief):
+    Housing market crash
   - Story (Detailed)
   - Gameplay (Brief)
   - Gameplay (Detailed)
 - Assets Needed
   - 2D
-  - 3D
+    Windows XP inspired interface
   - Sound
   - Code
   - Animation
-- Schedule
-  - <Object #1>
-  - <Object #2>
-  - <Object #3>
-  - <Object #4>
-
 
 # Overview
 
 
 ## Theme / Setting / Genre
-
-<Insert Theme here>
+y2k and economic crisis
 
 ## Core Gameplay Mechanics Brief
+  - Buying upgrades to get more upgrades
 
-  - <Gameplay Mechanic #1>
-  - <Gameplay Mechanic #2>
-  - <Gameplay Mechanic #3>
-  - <Gameplay Mechanic #4>
 
 ## Targeted platforms
-  - <Example Platform #1 Here>
-  - <Example Platform #2 Here>
-  - <Example Platform #3 Here>
+  - Web
+  - x86
+  - consoles???
 
 ## Monetization model (Brief/Document) 
-  - Monetization Type (Premium, Paid Alpha/Beta/Final, Ad Driven, Micro-transactions, Subscription, etc.)
-  - Link to Monetization Document (How do you plan to monetize the game?)
-
-## Project Scope 
-  - Game Time Scale
-    - Cost? (How much will it cost?)
-    - Time Scale (How long will it take to make this game?)
-  - Team Size
-    - Core Team
-      - Team Member name?
-        - What does he/she do?
-        - Cost to employ them full time or part time
-      - etc. (List as many core team members as you need to)
-    - Marketing Team
-      - Team Member name?
-        - What does he/she do?
-        - Cost to employ them full time or part time
-      - Etc. (List as many marketing team members as you need to)
-    - Licenses / Hardware / Other Costs
-    - Total Costs with breakdown
+  - Open Sources
 
 ## Influences (Brief)
   - Influence #1
@@ -99,8 +67,7 @@ Revision: 0.0.1
 
 ## The elevator Pitch
 
-[A one sentence pitch for your game.]
-Pretend that your were pitching your game to a executive going to the elevator. You have less than 60 Seconds.
+economic crisises but in an incremental game
 
 ## Project Description (Brief):
 
@@ -111,13 +78,6 @@ Pretend that your were pitching your game to a executive going to the elevator. 
 
 [Four Paragraphs or more If needs be]
 [No more than six paragraphs]
-
-# What sets this project apart?
-  - <Reason #1>
-  - <Reason #2>
-  - <Reason #3>
-  - <Reason #4>
-  - <etc.>
 
 ## Core Gameplay Mechanics (Detailed)
   - [Core Gameplay Mechanic #1]
@@ -163,18 +123,6 @@ Pretend that your were pitching your game to a executive going to the elevator. 
   - Heightmap data (If applicable)
     - List required data required - Example: DEM data of the entire UK.
   - Etc.
-
-## 3D
-  - Characters List
-    - Character #1
-    - Character #2
-    - Character #3
-    - etc.
-  - Environmental Art Lists
-    - Example #1
-    - Example #2 
-    - Example #3
-    - etc.
 
 ## Sound
   - Sound List (Ambient)
