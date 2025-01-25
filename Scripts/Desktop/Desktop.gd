@@ -8,9 +8,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	get_viewport().physics_object_picking_first_only = true
 	get_viewport().physics_object_picking_sort = true
+	BarMenu.visible = false
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:

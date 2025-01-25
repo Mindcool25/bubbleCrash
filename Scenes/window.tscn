@@ -53,10 +53,10 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 gradient = SubResource("Gradient_x808r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gew0j"]
-size = Vector2(284, 13)
+size = Vector2(298, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcrhv"]
-size = Vector2(13.5, 13.5)
+size = Vector2(12, 11)
 
 [node name="Window" type="Node2D"]
 script = SubResource("GDScript_h3c15")
@@ -82,13 +82,13 @@ texture = SubResource("GradientTexture2D_lkw3y")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="tabBox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(142, 6.5)
+position = Vector2(149, 6.5)
 shape = SubResource("RectangleShape2D_gew0j")
 
 [node name="Close" type="Area2D" parent="."]
 
 [node name="CloseButton" type="CollisionShape2D" parent="Close"]
-position = Vector2(291.25, 6.75)
+position = Vector2(291, 6.5)
 shape = SubResource("RectangleShape2D_vcrhv")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

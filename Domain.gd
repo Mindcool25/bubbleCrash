@@ -10,36 +10,36 @@ const COMPANIES = ["google", "vlc", "coke", "microsoft"]
 const VOWELMOD = 1.5
 
 func getPrice(domain: String, globalModifier: int) -> int:
-    var score = 0
+	var score = 0
 
-    var letterScore = LETTERSCORE
-    for c in domain:
-        score += letterScore[c]
-        letterScore[c] = letterScore[c] - 1
+	var letterScore = LETTERSCORE
+	for c in domain:
+		score += letterScore[c]
+		letterScore[c] = letterScore[c] - 1
 
-    if (score < 1):
-        score = 1
+	if (score < 1):
+		score = 1
 
-    
-    var lengthMod = 1
-    for i in range((domain.length() * -1) + LENGTHXSHIFT):
-        lengthMod *= LENGTHBASE
+	
+	var lengthMod = 1
+	for i in range((domain.length() * -1) + LENGTHXSHIFT):
+		lengthMod *= LENGTHBASE
 
-    lengthMod += LENGTHYSHIFT
-    score *= lengthMod
+	lengthMod += LENGTHYSHIFT
+	score *= lengthMod
 
-    var hasVowel = false
-    for c in domain:
-        if c in VOWELS:
-            hasVowel = true
+	var hasVowel = false
+	for c in domain:
+		if c in VOWELS:
+			hasVowel = true
 
-    if (!hasVowel):
-        score = (score * VOWELMOD) as int
+	if (!hasVowel):
+		score = (score * VOWELMOD) as int
 
-    for company in COMPANIES:
-        if domain.contains(company):
-            score *= 5
+	for company in COMPANIES:
+		if domain.contains(company):
+			score *= 5
 
-    score *= globalModifier
+	score *= globalModifier
 
-    return score as int
+	return score as int

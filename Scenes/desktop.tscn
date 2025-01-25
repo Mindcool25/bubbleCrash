@@ -41,9 +41,6 @@ texture = ExtResource("1_3cc4g")
 
 [node name="Windows" type="Node2D" parent="."]
 
-[node name="Window" parent="Windows" instance=ExtResource("4_7yjp2")]
-position = Vector2(296, 200)
-
 [node name="Bar" type="Sprite2D" parent="."]
 position = Vector2(400, 585)
 texture = ExtResource("3_btehf")

@@ -23,5 +23,5 @@ func _on_button_area_input_event(viewport: Node, event: InputEvent, shape_idx: i
 	if Input.is_action_just_pressed("click") and self.visible == true:
 		# Animation here
 		pressed = true
-		pass
+		get_parent().visible = false
 	pass # Replace with function body.
