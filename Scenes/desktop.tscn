@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://v58cm1el50qr"]
+[gd_scene load_steps=9 format=3 uid="uid://v58cm1el50qr"]
 
 [ext_resource type="Texture2D" uid="uid://bt8k8k3xa066a" path="res://Assets/Images/Mindows YQ.png" id="1_3cc4g"]
+[ext_resource type="Script" path="res://Scripts/Desktop/Desktop.gd" id="1_knfap"]
 [ext_resource type="Texture2D" uid="uid://odgmltxytgk0" path="res://Assets/Images/Bar.jpg" id="2_ex315"]
+[ext_resource type="Texture2D" uid="uid://c32j0342ybfuc" path="res://Assets/Images/BarButton.jpg" id="3_xh7e0"]
+[ext_resource type="PackedScene" uid="uid://cde60uvmuagg" path="res://Scenes/window.tscn" id="4_7yjp2"]
+[ext_resource type="Texture2D" uid="uid://egwvqq14e0xd" path="res://Assets/Images/BarMenu.jpg" id="4_kdqul"]
 
-[node name="Desktop" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkto1"]
+size = Vector2(70, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uqwn"]
+size = Vector2(70, 20)
+
+[node name="Desktop" type="Node2D" node_paths=PackedStringArray("Background", "Bar", "BarButton", "BarMenu")]
+script = ExtResource("1_knfap")
+Background = NodePath("Background")
+Bar = NodePath("Bar")
+BarButton = NodePath("Bar/BarButton")
+BarMenu = NodePath("Bar/BarButton/BarMenu")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -12,3 +27,30 @@ texture = ExtResource("1_3cc4g")
 [node name="Bar" type="Sprite2D" parent="."]
 position = Vector2(400, 590)
 texture = ExtResource("2_ex315")
+
+[node name="BarButton" type="Sprite2D" parent="Bar"]
+position = Vector2(-365, 0)
+texture = ExtResource("3_xh7e0")
+
+[node name="ButtonBox" type="Area2D" parent="Bar/BarButton"]
+
+[node name="ButtonhitBox" type="CollisionShape2D" parent="Bar/BarButton/ButtonBox"]
+shape = SubResource("RectangleShape2D_hkto1")
+
+[node name="BarMenu" type="Sprite2D" parent="Bar/BarButton"]
+position = Vector2(65, -164)
+texture = ExtResource("4_kdqul")
+
+[node name="AppButton" type="Sprite2D" parent="Bar/BarButton/BarMenu"]
+position = Vector2(-60, -135)
+texture = ExtResource("3_xh7e0")
+
+[node name="Area2D" type="Area2D" parent="Bar/BarButton/BarMenu/AppButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/BarButton/BarMenu/AppButton/Area2D"]
+shape = SubResource("RectangleShape2D_3uqwn")
+
+[node name="Window" parent="Bar/BarButton/BarMenu/AppButton" instance=ExtResource("4_7yjp2")]
+position = Vector2(272, -115)
+
+[connection signal="input_event" from="Bar/BarButton/ButtonBox" to="." method="_on_button_box_input_event"]
