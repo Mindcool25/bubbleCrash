@@ -30,6 +30,7 @@ Revision: 0.0.1
   - 2D
     Windows XP inspired interface
   - Sound
+    In-game menu theme, main game loop theme, sound effects
   - Code
   - Animation
 
