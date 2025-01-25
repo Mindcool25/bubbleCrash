@@ -3,11 +3,12 @@
 [sub_resource type="GDScript" id="GDScript_h3c15"]
 script/source = "extends Node2D
 
-@export var tabBox: CollisionShape2D
 var dragging: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().physics_object_picking_first_only = true
+	get_viewport().physics_object_picking_sort = true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +25,15 @@ func _input(event: InputEvent) -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed(\"click\"):
 		dragging = true
-		var overlapping = $Area2D.get_overlapping_areas()
+		var overlapping: Array[Area2D] = $Area2D.get_overlapping_areas()
+		if len(overlapping) > 0:
+			print(\"SDLKJSDF\")
+			#get_tree().set_input_as_handled()
+		print(\"Self index:\")
+		print(self.get_index(true))
+		print(\"Other indexs:\")
+		for i in overlapping:
+			print(i.get_index(true))
 		self.get_parent().move_child(self, -1)
 		
 	if Input.is_action_just_released(\"click\"):
@@ -51,9 +60,8 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lkw3y"]
 gradient = SubResource("Gradient_x808r")
 
-[node name="Window" type="Node2D" node_paths=PackedStringArray("tabBox")]
+[node name="Window" type="Node2D"]
 script = SubResource("GDScript_h3c15")
-tabBox = NodePath("")
 
 [node name="Area2D" type="Area2D" parent="."]
 
