@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt0qxbcip2nxt"]
+
+[ext_resource type="Texture2D" uid="uid://dgquhpdktnsth" path="res://icon.svg" id="1_p6jvc"]
+[ext_resource type="Script" path="res://Scripts/Applications/clicker.gd" id="2_d6bkg"]
+
+[node name="Clicker" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(150.5, 96.5636)
+scale = Vector2(2.35, 1.5)
+texture = ExtResource("1_p6jvc")
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("ClickButton", "Score")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 9.0
+offset_bottom = 10.0
+script = ExtResource("2_d6bkg")
+ClickButton = NodePath("Button")
+Score = NodePath("Label")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 98.0
+offset_right = 188.0
+offset_bottom = 171.0
+icon = ExtResource("1_p6jvc")
+expand_icon = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 49.0
+offset_right = 177.0
+offset_bottom = 72.0
+text = "0"
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v58cm1el50qr"]
+[gd_scene load_steps=14 format=3 uid="uid://v58cm1el50qr"]
 
 [ext_resource type="Texture2D" uid="uid://bt8k8k3xa066a" path="res://Assets/Images/Mindows YQ.png" id="1_3cc4g"]
 [ext_resource type="Script" path="res://Scripts/Desktop/Desktop.gd" id="1_knfap"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ddb1ihr7gdlr7" path="res://Assets/Images/Begin.png" id="5_qvxxb"]
 [ext_resource type="Texture2D" uid="uid://cjvsqyk26a7rc" path="res://Assets/Images/Begin button dark.png" id="5_ulxha"]
 [ext_resource type="PackedScene" uid="uid://clbo0gclh2avm" path="res://Scenes/app_button.tscn" id="10_g6kyc"]
+[ext_resource type="Texture2D" uid="uid://dgquhpdktnsth" path="res://icon.svg" id="11_2hwk1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3jig"]
 animations = [{
@@ -28,12 +29,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkto1"]
 size = Vector2(90, 30)
 
-[node name="Desktop" type="Node2D" node_paths=PackedStringArray("Background", "Bar", "BarButton", "BarMenu")]
+[node name="Desktop" type="Node2D" node_paths=PackedStringArray("Background", "Bar", "BarButton", "BarMenu", "Settings")]
 script = ExtResource("1_knfap")
 Background = NodePath("Background")
 Bar = NodePath("Bar")
 BarButton = NodePath("Bar/BarButton")
 BarMenu = NodePath("Bar/BarButton/BarMenu")
+Settings = NodePath("Bar/BarButton/BarMenu/Settings")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -73,4 +75,24 @@ position = Vector2(-89, -139)
 Application = ExtResource("4_7yjp2")
 WindowHolder = NodePath("../../../../Windows")
 
+[node name="Settings" type="Button" parent="Bar/BarButton/BarMenu"]
+offset_left = 60.0
+offset_top = 110.0
+offset_right = 94.0
+offset_bottom = 144.0
+icon = ExtResource("11_2hwk1")
+expand_icon = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(95, 85)
+size = Vector2i(620, 383)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+root_subfolder = "~"
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg", "*.gif")
+
 [connection signal="input_event" from="Bar/BarButton/ButtonBox" to="." method="_on_button_box_input_event"]
+[connection signal="pressed" from="Bar/BarButton/BarMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
