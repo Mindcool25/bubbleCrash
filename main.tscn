@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://cbmydbqhv657q"]
+[gd_scene load_steps=2 format=3 uid="uid://cbmydbqhv657q"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://v58cm1el50qr" path="res://Scenes/desktop.tscn" id="1_haau4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Desktop" parent="." instance=ExtResource("1_haau4")]

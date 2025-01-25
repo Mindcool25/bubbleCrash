@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cde60uvmuagg"]
+
+[ext_resource type="Script" path="res://Scripts/Desktop/window.gd" id="1_5p0uk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gew0j"]
+size = Vector2(298, 13)
+
+[sub_resource type="Gradient" id="Gradient_seg2u"]
+offsets = PackedFloat32Array(0, 0.532468, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.67451, 0.607843, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xhlf"]
+gradient = SubResource("Gradient_seg2u")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3dea8"]
+
+[sub_resource type="Gradient" id="Gradient_x808r"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lkw3y"]
+gradient = SubResource("Gradient_x808r")
+
+[node name="Window" type="StaticBody2D" node_paths=PackedStringArray("tabBox")]
+input_pickable = true
+script = ExtResource("1_5p0uk")
+tabBox = NodePath("tabBox")
+
+[node name="tabBox" type="CollisionShape2D" parent="."]
+position = Vector2(149, 6.5)
+shape = SubResource("RectangleShape2D_gew0j")
+
+[node name="windowTab" type="Sprite2D" parent="."]
+position = Vector2(149.097, 6.77067)
+rotation = 1.5708
+scale = Vector2(0.211629, 4.65923)
+texture = SubResource("GradientTexture2D_1xhlf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="windowTab"]
+position = Vector2(480.818, -0.00618134)
+rotation = -1.5708
+scale = Vector2(63.9838, 899.944)
+texture = SubResource("PlaceholderTexture2D_3dea8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="windowTab"]
+position = Vector2(-0.57744, -30.4567)
+rotation = -1.5708
+scale = Vector2(0.0374654, 0.824844)
+texture = SubResource("GradientTexture2D_lkw3y")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
